@@ -160,7 +160,7 @@
   }
 
   .home-inner {
-    display: flex; flex-direction: column; gap: 24px;
+    display: flex; flex-direction: column; gap: 20px;
   }
 
   .profile-row {
@@ -168,7 +168,7 @@
   }
 
   .profile-photo {
-    width: 80px; height: 80px; border-radius: 50%;
+    width: 90px; height: 90px; border-radius: 50%;
     border: 2px solid var(--cyan);
     background: linear-gradient(135deg, #10182D, #0B1120);
     display: flex; align-items: center; justify-content: center;
@@ -182,14 +182,14 @@
   .profile-info { display: flex; flex-direction: column; gap: 4px; }
   .profile-name {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 22px; font-weight: 700; line-height: 1;
+    font-size: 24px; font-weight: 700; line-height: 1.1;
   }
-  .profile-loc { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+  .profile-loc { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
 
   .status-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 6px; padding: 6px 14px;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: #0A1124; border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px; padding: 7px 16px;
     width: fit-content;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
@@ -197,17 +197,18 @@
     transform: translateY(-1px) scale(1.02);
     box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1);
   }
-  .status-badge .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+  .status-badge .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .status-badge .dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse-g 2s infinite; }
-  .status-badge span { font-size: 12px; font-weight: 500; color: var(--muted); }
-  .status-badge strong { color: var(--text); }
+  .status-badge span { font-size: 12.5px; font-weight: 500; color: var(--muted); }
+  .status-badge strong { color: var(--text); font-weight: 500; }
 
   @keyframes pulse-g { 0%,100% { box-shadow: 0 0 6px var(--green); } 50% { box-shadow: 0 0 14px var(--green); } }
 
   .hero-headline {
-    font-size: clamp(34px, 6.5vw, 54px);
-    font-weight: 700; line-height: 1.05;
+    font-size: clamp(38px, 6.5vw, 54px);
+    font-weight: 700; line-height: 1.1;
     letter-spacing: -1.5px;
+    margin-top: 8px;
   }
   .hero-headline .line-cyan { color: var(--cyan); }
 
@@ -223,24 +224,24 @@
 
   .btn {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 13px; font-weight: 600; letter-spacing: 0.3px;
-    padding: 11px 24px; border-radius: 7px;
+    font-size: 14px; font-weight: 600; letter-spacing: 0.2px;
+    padding: 12px 24px; border-radius: 8px;
     border: none; cursor: pointer; text-decoration: none;
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    display: inline-flex; align-items: center; gap: 7px;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   }
   .btn-cyan { background: var(--cyan); color: #060A16; }
-  .btn-cyan:hover { background: #33d4ff; transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 20px rgba(0, 240, 255, 0.4); }
-  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
-  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0, 240, 255, 0.05); transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 20px rgba(0, 240, 255, 0.15); }
+  .btn-cyan:hover { background: #33d4ff; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 240, 255, 0.35); }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(255, 255, 255, 0.15); }
+  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0, 240, 255, 0.04); transform: translateY(-2px); }
 
   /* ── TERMINAL WIDGET ── */
   .terminal-widget {
     background: #02050D;
-    border: 1px solid var(--border);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
-    font-family: 'Space Grotesk', monospace;
-    font-size: 12px;
+    font-family: 'Consolas', 'Fira Code', 'Monaco', 'Courier New', monospace;
+    font-size: 12.5px;
     color: #A0C0E0;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     height: 250px;
@@ -261,15 +262,16 @@
     gap: 6px;
   }
   .terminal-btn {
-    width: 9px; height: 9px; border-radius: 50%;
+    width: 10px; height: 10px; border-radius: 50%;
   }
   .terminal-btn.r { background: var(--red); }
   .terminal-btn.y { background: #FFB347; }
   .terminal-btn.g { background: var(--green); }
   .terminal-title {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 1px;
+    color: #7B8DB0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
   }
   .terminal-body {
@@ -279,7 +281,21 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-    line-height: 1.5;
+    line-height: 1.6;
+  }
+  .terminal-body::-webkit-scrollbar {
+    width: 6px;
+  }
+  .terminal-body::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 4px;
+  }
+  .terminal-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+  }
+  .terminal-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
   }
   .terminal-line {
     white-space: pre-wrap;
@@ -645,7 +661,7 @@
       gap: 14px;
     }
     .terminal-widget {
-      height: 190px;
+      height: 230px;
     }
   }
 
@@ -724,9 +740,9 @@
 
     <div class="status-badge">
       <span class="dot green"></span>
-      <span><strong>SOC Analyst</strong></span>
+      <span>SOC Analyst</span>
       <span style="color:rgba(255,255,255,0.15)">|</span>
-      <span><strong>Threat Hunt & Incident Response</strong></span>
+      <span>Threat Hunt & Incident Response</span>
     </div>
 
     <h1 class="hero-headline">
@@ -755,7 +771,7 @@
       <div class="terminal-title">Active Security Ops Console</div>
     </div>
     <div class="terminal-body" id="terminalBody">
-      <div class="terminal-line"><span class="muted-text">[SYSTEM-INIT]</span> Launching SOC Dashboard...</div>
+      <div class="terminal-line"><span class="muted-text">[SYSTEM-INIT]</span> Restarting SOC dashboard audit...</div>
     </div>
   </div>
 </section>
@@ -1159,6 +1175,19 @@
     }
   });
 
+  // Helper function to format timestamp in HH:MM:SS AM/PM format
+  function getFormattedTime() {
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // hour '0' should be '12'
+    const hoursStr = String(hours).padStart(2, '0');
+    return `${hoursStr}:${minutes}:${seconds} ${ampm}`;
+  }
+
   // Interactive Terminal Typing Simulator
   const logs = [
     { text: "[ALERT] Unauthorized outbound request detected.", type: "red-text" },
@@ -1181,7 +1210,7 @@
     line.className = 'terminal-line';
     
     // Prefix
-    const timestamp = new Date().toLocaleTimeString();
+    const timestamp = getFormattedTime();
     const prefix = document.createElement('span');
     prefix.className = 'muted-text';
     prefix.innerText = `[${timestamp}] `;
@@ -1228,6 +1257,9 @@
       }, 5000);
     }
   }
+
+  // Start the simulation with the initial line matching the screenshot
+  terminalBody.innerHTML = '<div class="terminal-line"><span class="muted-text">[SYSTEM-INIT]</span> Restarting SOC dashboard audit...</div>';
 
   // Start the console simulation after a small delay
   setTimeout(runTerminalSequence, 1500);
