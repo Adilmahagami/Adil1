@@ -52,8 +52,15 @@
     color: var(--text);
     letter-spacing: -0.3px;
     text-decoration: none;
+    transition: transform 0.2s ease;
   }
-  .nav-logo span { color: var(--cyan); }
+  .nav-logo:hover {
+    transform: scale(1.03);
+  }
+  .nav-logo span { color: var(--cyan); transition: text-shadow 0.2s ease; }
+  .nav-logo:hover span {
+    text-shadow: 0 0 8px var(--cyan);
+  }
 
   .nav-links {
     display: flex;
@@ -65,10 +72,12 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    transition: color 0.2s;
+    transition: color 0.2s ease, transform 0.2s ease, text-shadow 0.2s ease;
   }
   .nav-links a:hover {
     color: var(--cyan);
+    transform: translateY(-1px);
+    text-shadow: 0 0 8px rgba(0, 240, 255, 0.4);
   }
   
   .nav-btn-alt {
@@ -78,13 +87,13 @@
     padding: 8px 16px; border-radius: 6px;
     border: 1px solid #FFB347;
     background: rgba(255,179,71,0.1);
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   .nav-btn-alt:hover {
     background: #FFB347;
     color: var(--bg);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(255,179,71,0.2);
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(255,179,71,0.35);
   }
 
   .hamburger {
@@ -182,6 +191,11 @@
     background: var(--card); border: 1px solid var(--border);
     border-radius: 6px; padding: 6px 14px;
     width: fit-content;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .status-badge:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1);
   }
   .status-badge .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .status-badge .dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse-g 2s infinite; }
@@ -212,13 +226,13 @@
     font-size: 13px; font-weight: 600; letter-spacing: 0.3px;
     padding: 11px 24px; border-radius: 7px;
     border: none; cursor: pointer; text-decoration: none;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: inline-flex; align-items: center; gap: 7px;
   }
   .btn-cyan { background: var(--cyan); color: #060A16; }
-  .btn-cyan:hover { background: #33d4ff; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(0, 240, 255, 0.3); }
+  .btn-cyan:hover { background: #33d4ff; transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 20px rgba(0, 240, 255, 0.4); }
   .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
-  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); }
+  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0, 240, 255, 0.05); transform: translateY(-3px) scale(1.03); box-shadow: 0 8px 20px rgba(0, 240, 255, 0.15); }
 
   /* ── TERMINAL WIDGET ── */
   .terminal-widget {
@@ -367,11 +381,13 @@
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   .cert-card:hover {
-    border-color: rgba(0, 240, 255, 0.25);
+    border-color: rgba(0, 240, 255, 0.35);
     background: var(--card2);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 240, 255, 0.1);
   }
   .cert-badge-icon {
     font-size: 20px;
@@ -403,9 +419,13 @@
   .skill-group {
     background: var(--card); border: 1px solid var(--border2);
     border-radius: 12px; padding: 24px;
-    transition: border-color 0.2s;
+    transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
   }
-  .skill-group:hover { border-color: var(--border); }
+  .skill-group:hover {
+    border-color: var(--border);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 240, 255, 0.08);
+  }
   .skill-group.full { grid-column: 1/-1; }
   .skill-group h3 {
     font-size: 14px; font-weight: 600; margin-bottom: 16px;
@@ -419,11 +439,17 @@
     padding: 6px 14px; border-radius: 6px;
     border: 1px solid var(--border2);
     color: var(--muted);
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: default;
     background: rgba(255, 255, 255, 0.02);
   }
-  .tag:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+  .tag:hover {
+    color: var(--cyan);
+    border-color: rgba(0, 240, 255, 0.45);
+    background: var(--cyan-dim);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 240, 255, 0.1);
+  }
   .tag.active-tag { color: var(--cyan); border-color: rgba(0, 240, 255, 0.35); background: var(--cyan-dim); }
 
   /* ── PROJECTS ── */
@@ -439,16 +465,16 @@
   .proj-card {
     background: var(--card); border: 1px solid var(--border2);
     border-radius: 12px; padding: 24px;
-    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
     cursor: default;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
   .proj-card:hover { 
-    transform: translateY(-3px); 
-    border-color: rgba(0, 240, 255, 0.35);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-6px) scale(1.02); 
+    border-color: rgba(0, 240, 255, 0.45);
+    box-shadow: 0 12px 30px rgba(0, 240, 255, 0.15);
   }
 
   .proj-card-content {
@@ -548,10 +574,15 @@
     padding: 14px 16px; border-radius: 8px;
     border: 1px solid var(--border2);
     background: var(--card2);
-    transition: all 0.2s;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     font-size: 14px;
   }
-  .contact-link:hover { border-color: var(--cyan); color: var(--cyan); box-shadow: 0 4px 12px rgba(0,240,255,0.1); }
+  .contact-link:hover { 
+    border-color: var(--cyan); 
+    color: var(--cyan); 
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15); 
+    transform: translateY(-4px) scale(1.03);
+  }
   .contact-link .cl-icon { font-size: 18px; flex-shrink: 0; }
   .contact-link .cl-label { font-size: 11px; color: var(--muted); line-height: 1; margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
 
@@ -561,6 +592,11 @@
     background: rgba(0, 240, 255, 0.05); border: 1px solid rgba(0, 240, 255, 0.15);
     font-size: 13px; color: var(--text);
     width: fit-content;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .avail-badge:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 10px rgba(0, 240, 255, 0.1);
   }
   .avail-badge .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); animation: pulse-green 2s infinite; }
   @keyframes pulse-green { 0%,100% { box-shadow: 0 0 0 0 rgba(0,255,136,0.4); } 50% { box-shadow: 0 0 0 6px rgba(0,255,136,0); } }
@@ -573,7 +609,14 @@
     font-size: 12px; color: var(--muted);
     border-top: 1px solid var(--border2);
   }
-  footer a { color: var(--cyan); text-decoration: none; }
+  footer a { 
+    color: var(--cyan); 
+    text-decoration: none; 
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+  }
+  footer a:hover {
+    text-shadow: 0 0 6px var(--cyan);
+  }
 
   /* ── GLOW BG ── */
   .glow-bg {
