@@ -9,20 +9,20 @@
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #060A16;
-    --bg2: #0B1120;
-    --card: #10182D;
-    --card2: #16223F;
-    --cyan: #00F0FF;
-    --cyan-dim: rgba(0, 240, 255, 0.1);
-    --green: #00FF88;
-    --green-dim: rgba(0, 255, 136, 0.12);
-    --red: #FF3E3E;
-    --red-dim: rgba(255, 62, 62, 0.15);
-    --text: #F0F4FF;
-    --muted: #7B8DB0;
-    --border: rgba(0, 240, 255, 0.15);
-    --border2: rgba(255, 255, 255, 0.07);
+    --bg: #F8FAFC;
+    --bg2: #F1F5F9;
+    --card: #FFFFFF;
+    --card2: #F8FAFC;
+    --cyan: #0E7490;
+    --cyan-dim: rgba(14, 116, 144, 0.08);
+    --green: #16A34A;
+    --green-dim: rgba(22, 163, 74, 0.08);
+    --red: #DC2626;
+    --red-dim: rgba(220, 38, 38, 0.08);
+    --text: #0F172A;
+    --muted: #475569;
+    --border: rgba(14, 116, 144, 0.15);
+    --border2: rgba(15, 23, 42, 0.08);
   }
 
   html { scroll-behavior: smooth; }
@@ -39,7 +39,7 @@
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(6, 10, 22, 0.92);
+    background: rgba(255, 255, 255, 0.85);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border2);
     display: flex; align-items: center; justify-content: space-between;
@@ -83,17 +83,17 @@
   .nav-btn-alt {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 13px; font-weight: 600;
-    color: #FFB347; text-decoration: none;
+    color: #B45309; text-decoration: none;
     padding: 8px 16px; border-radius: 6px;
-    border: 1px solid #FFB347;
-    background: rgba(255,179,71,0.1);
+    border: 1px solid #B45309;
+    background: rgba(180, 83, 9, 0.08);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
   .nav-btn-alt:hover {
-    background: #FFB347;
+    background: #B45309;
     color: var(--bg);
     transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 6px 16px rgba(255,179,71,0.35);
+    box-shadow: 0 6px 16px rgba(180, 83, 9, 0.35);
   }
 
   .hamburger {
@@ -110,7 +110,7 @@
   /* ── MOBILE MENU ── */
   .menu-overlay {
     position: fixed; inset: 0; z-index: 99;
-    background: rgba(6,10,22,0.98);
+    background: rgba(255, 255, 255, 0.98);
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     gap: 15px;
     opacity: 0; pointer-events: none;
@@ -129,13 +129,13 @@
   .menu-overlay a:hover { color: var(--cyan); background: var(--cyan-dim); }
   
   .menu-overlay .menu-btn-alt {
-    color: #FFB347;
-    border: 1px solid #FFB347;
-    background: rgba(255,179,71,0.1);
+    color: #B45309;
+    border: 1px solid #B45309;
+    background: rgba(180, 83, 9, 0.08);
     margin-top: 15px;
   }
   .menu-overlay .menu-btn-alt:hover {
-    background: #FFB347;
+    background: #B45309;
     color: var(--bg);
   }
 
@@ -151,12 +151,12 @@
 
   /* ── HOME / HERO ── */
   #home {
-    min-height: 85vh;
+    min-height: 70vh;
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;
-    align-items: center;
+    align-items: start;
     gap: 40px;
-    padding-top: 70px;
+    padding-top: 90px;
   }
 
   .home-inner {
@@ -170,11 +170,11 @@
   .profile-photo {
     width: 90px; height: 90px; border-radius: 50%;
     border: 2px solid var(--cyan);
-    background: linear-gradient(135deg, #10182D, #0B1120);
+    background: linear-gradient(135deg, var(--card), var(--bg2));
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
     position: relative; overflow: hidden;
-    box-shadow: 0 0 16px rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 16px rgba(14, 116, 144, 0.15);
   }
   .profile-photo svg { width: 44px; height: 44px; opacity: 0.7; color: var(--cyan); }
   .profile-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -188,14 +188,14 @@
 
   .status-badge {
     display: inline-flex; align-items: center; gap: 10px;
-    background: #0A1124; border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--card); border: 1px solid var(--border2);
     border-radius: 8px; padding: 7px 16px;
     width: fit-content;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   .status-badge:hover {
     transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 4px 12px rgba(0, 240, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(14, 116, 144, 0.1);
   }
   .status-badge .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .status-badge .dot.green { background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse-g 2s infinite; }
@@ -230,28 +230,28 @@
     transition: all 0.2s ease-in-out;
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
   }
-  .btn-cyan { background: var(--cyan); color: #060A16; }
-  .btn-cyan:hover { background: #33d4ff; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0, 240, 255, 0.35); }
-  .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(255, 255, 255, 0.15); }
-  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(0, 240, 255, 0.04); transform: translateY(-2px); }
+  .btn-cyan { background: var(--cyan); color: #FFFFFF; }
+  .btn-cyan:hover { background: #08667e; transform: translateY(-2px); box-shadow: 0 6px 16px rgba(14, 116, 144, 0.35); }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(15, 23, 42, 0.18); }
+  .btn-outline:hover { border-color: var(--cyan); color: var(--cyan); background: rgba(14, 116, 144, 0.04); transform: translateY(-2px); }
 
   /* ── TERMINAL WIDGET ── */
   .terminal-widget {
     background: #02050D;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 10px;
     font-family: 'Consolas', 'Fira Code', 'Monaco', 'Courier New', monospace;
     font-size: 12.5px;
     color: #A0C0E0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
     height: 250px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
   }
   .terminal-header {
-    background: var(--card);
-    border-bottom: 1px solid var(--border2);
+    background: #0B1120;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
     padding: 8px 14px;
     display: flex;
     align-items: center;
@@ -379,7 +379,7 @@
     display: inline-block; font-size: 9px; font-weight: 700;
     letter-spacing: 1px; text-transform: uppercase;
     padding: 2px 8px; border-radius: 20px; margin-left: 8px;
-    background: rgba(0, 240, 255, 0.12); color: var(--cyan); border: 1px solid var(--cyan);
+    background: var(--cyan-dim); color: var(--cyan); border: 1px solid var(--border);
     vertical-align: middle;
   }
 
@@ -457,7 +457,7 @@
     color: var(--muted);
     transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
     cursor: default;
-    background: rgba(255, 255, 255, 0.02);
+    background: var(--bg2);
   }
   .tag:hover {
     color: var(--cyan);
@@ -531,8 +531,8 @@
 
   /* ── ALTERNATIVE SKILLS CTA BANNER ── */
   .webdev-banner {
-    background: linear-gradient(135deg, rgba(16, 24, 45, 0.8), rgba(30, 20, 10, 0.4));
-    border: 1px solid rgba(255,179,71,0.15);
+    background: linear-gradient(135deg, rgba(180, 83, 9, 0.04), rgba(217, 119, 6, 0.08));
+    border: 1px solid rgba(180, 83, 9, 0.15);
     border-radius: 14px;
     padding: 30px;
     margin-top: 40px;
@@ -549,7 +549,7 @@
   }
   .webdev-banner-text h3 {
     font-size: 18px;
-    color: #FFB347;
+    color: #B45309;
   }
   .webdev-banner-text p {
     font-size: 13.5px;
@@ -559,17 +559,17 @@
   .webdev-banner-btn {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 13px; font-weight: 600;
-    color: #060A16; text-decoration: none;
+    color: #FFFFFF; text-decoration: none;
     padding: 12px 22px; border-radius: 7px;
-    background: #FFB347;
+    background: #B45309;
     white-space: nowrap;
     transition: all 0.2s;
-    box-shadow: 0 4px 12px rgba(255,179,71,0.15);
+    box-shadow: 0 4px 12px rgba(180, 83, 9, 0.15);
   }
   .webdev-banner-btn:hover {
-    background: #ffc470;
+    background: #D97706;
     transform: translateY(-1px);
-    box-shadow: 0 4px 16px rgba(255,179,71,0.3);
+    box-shadow: 0 4px 16px rgba(180, 83, 9, 0.3);
   }
 
   /* ── CONTACT ── */
@@ -638,13 +638,13 @@
   .glow-bg {
     position: fixed; top: -200px; right: -200px;
     width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 240, 255, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(14, 116, 144, 0.08) 0%, transparent 70%);
     pointer-events: none; z-index: 0;
   }
   .glow-bg2 {
     position: fixed; bottom: -200px; left: -200px;
     width: 600px; height: 600px; border-radius: 50%;
-    background: radial-gradient(circle, rgba(0, 255, 136, 0.02) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(22, 163, 74, 0.04) 0%, transparent 70%);
     pointer-events: none; z-index: 0;
   }
   section, nav, footer { position: relative; z-index: 1; }
@@ -654,7 +654,7 @@
     #home {
       grid-template-columns: 1fr;
       gap: 16px;
-      padding-top: 55px;
+      padding-top: 80px;
       min-height: auto;
     }
     .home-inner {
@@ -741,7 +741,7 @@
     <div class="status-badge">
       <span class="dot green"></span>
       <span>SOC Analyst</span>
-      <span style="color:rgba(255,255,255,0.15)">|</span>
+      <span style="color:rgba(15,23,42,0.15)">|</span>
       <span>Threat Hunt & Incident Response</span>
     </div>
 
@@ -785,12 +785,18 @@
 
   <div class="about-grid">
     <div class="about-card cyan-card">
-      <div class="ac-label">🛡 SOC L1 / L2 Capabilities</div>
+      <div class="ac-label" style="display:flex; align-items:center; gap:8px;">
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <span>SOC L1 / L2 Capabilities</span>
+      </div>
       <p>I have hands-on academic and laboratory training in **SIEM engineering, alert monitoring, and incident response**. Skilled in analyzing Windows Event logs, investigating suspicious IP/domain indicators, and identifying phishing attempts. I focus on reducing false positives while identifying legitimate intrusions using industry standard threat intelligence repositories.</p>
     </div>
     
     <div class="about-card">
-      <div class="ac-label" style="color:var(--green)">🎯 Core Focus Areas</div>
+      <div class="ac-label" style="color:var(--green); display:flex; align-items:center; gap:8px;">
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+        <span>Core Focus Areas</span>
+      </div>
       <div class="focus-list">
         <div class="focus-item">
           <div class="focus-num">1</div>
@@ -810,7 +816,10 @@
     </div>
 
     <div class="about-card full">
-      <div class="ac-label" style="color:var(--cyan)">💼 Professional Background</div>
+      <div class="ac-label" style="color:var(--cyan); display:flex; align-items:center; gap:8px;">
+        <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        <span>Professional Background</span>
+      </div>
       <div class="exp-item">
         <div class="exp-role">B.Tech — Computer Science & Engineering <span class="exp-badge" style="background:var(--green-dim); color:var(--green); border-color:var(--green)">Completed</span></div>
         <div class="exp-company">Dr. Babasaheb Ambedkar Institute of Technology, Solapur</div>
@@ -830,7 +839,9 @@
   <div class="cert-grid">
     <!-- Cert 1 -->
     <div class="cert-card">
-      <div class="cert-badge-icon">🛡</div>
+      <div class="cert-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+      </div>
       <div class="cert-info">
         <h4>SOC Analyst (Cyber Pro 1)</h4>
         <p>SIEM tools, incident monitoring, alert routing, and SOC analyst workflows.</p>
@@ -838,7 +849,9 @@
     </div>
     <!-- Cert 2 -->
     <div class="cert-card">
-      <div class="cert-badge-icon">🔒</div>
+      <div class="cert-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+      </div>
       <div class="cert-info">
         <h4>Certified Ransomware Protection Officer (CRPO)</h4>
         <p>Issued by EU Cyber Academy. Ransomware vector containment & recovery.</p>
@@ -846,7 +859,9 @@
     </div>
     <!-- Cert 3 -->
     <div class="cert-card">
-      <div class="cert-badge-icon">📧</div>
+      <div class="cert-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+      </div>
       <div class="cert-info">
         <h4>Certified Phishing Prevention Specialist (CPPS)</h4>
         <p>Issued by Hack & Fix. Phishing indicators and email header analysis.</p>
@@ -854,7 +869,9 @@
     </div>
     <!-- Cert 4 -->
     <div class="cert-card">
-      <div class="cert-badge-icon">⚙️</div>
+      <div class="cert-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+      </div>
       <div class="cert-info">
         <h4>ISO 27001 Information Security Associate</h4>
         <p>SkillFront. Standard compliance and security architecture baselines.</p>
@@ -862,7 +879,9 @@
     </div>
     <!-- Cert 5 -->
     <div class="cert-card">
-      <div class="cert-badge-icon">📊</div>
+      <div class="cert-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+      </div>
       <div class="cert-info">
         <h4>Cybersecurity Analyst</h4>
         <p>Tata Group. Enterprise security monitoring and threat vector analysis.</p>
@@ -870,7 +889,9 @@
     </div>
     <!-- Cert 6 -->
     <div class="cert-card">
-      <div class="cert-badge-icon">⚔️</div>
+      <div class="cert-badge-icon">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 17.5L3 6V3h3l11.5 11.5M9.5 17.5L21 6V3h-3L6.5 14.5m1.5 5.5l1.5-1.5m6.5 1.5L14.5 18"></path></svg>
+      </div>
       <div class="cert-info">
         <h4>Certified Red Team Operation Management (CRTOM)</h4>
         <p>System attack surface audit and mitigation control checks.</p>
@@ -969,7 +990,9 @@
     <div class="proj-card">
       <div class="proj-card-content">
         <div class="proj-card-top">
-          <div class="proj-icon">🔍</div>
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </div>
           <span class="proj-year">Active Environment</span>
         </div>
         <div class="proj-name">Incident Response Lab Setup</div>
@@ -987,7 +1010,9 @@
     <div class="proj-card">
       <div class="proj-card-content">
         <div class="proj-card-top">
-          <div class="proj-icon">⚙️</div>
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          </div>
           <span class="proj-year">Rule Creation</span>
         </div>
         <div class="proj-name">QRadar Use Cases & Detections</div>
@@ -1005,7 +1030,9 @@
     <div class="proj-card">
       <div class="proj-card-content">
         <div class="proj-card-top">
-          <div class="proj-icon">🌐</div>
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+          </div>
           <span class="proj-year">OSINT Intelligence</span>
         </div>
         <div class="proj-name">OSINT Threat Intelligence Hub</div>
@@ -1023,7 +1050,9 @@
     <div class="proj-card">
       <div class="proj-card-content">
         <div class="proj-card-top">
-          <div class="proj-icon">📧</div>
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
           <span class="proj-year">Email Forensics</span>
         </div>
         <div class="proj-name">Phishing Investigation Pipeline</div>
@@ -1041,7 +1070,9 @@
     <div class="proj-card">
       <div class="proj-card-content">
         <div class="proj-card-top">
-          <div class="proj-icon">🖥️</div>
+          <div class="proj-icon">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </div>
           <span class="proj-year">Alert Triage</span>
         </div>
         <div class="proj-name">SOC Monitor & Alert Triage</div>
@@ -1053,11 +1084,14 @@
         <span class="proj-tag">Windows Security Logs</span>
         <span class="proj-tag">Intrusion Detection</span>
       </div>
+    </div>
     <!-- SOC Project 6 (Upcoming) -->
     <div class="proj-card" style="border-style: dashed; border-color: rgba(0, 240, 255, 0.3);">
       <div class="proj-card-content">
         <div class="proj-card-top">
-          <div class="proj-icon" style="background: rgba(0, 240, 255, 0.05);">⚡</div>
+          <div class="proj-icon" style="background: rgba(0, 240, 255, 0.05);">
+            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+          </div>
           <span class="proj-year" style="color: var(--cyan);">Upcoming</span>
         </div>
         <div class="proj-name">Upcoming Projects</div>
@@ -1092,21 +1126,27 @@
 
     <div class="contact-card">
       <a href="mailto:adilmahagami104@gmail.com" class="contact-link">
-        <span class="cl-icon">📧</span>
+        <span class="cl-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+        </span>
         <div>
           <div class="cl-label">Email</div>
           adilmahagami104@gmail.com
         </div>
       </a>
       <a href="tel:+918485022484" class="contact-link">
-        <span class="cl-icon">📱</span>
+        <span class="cl-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+        </span>
         <div>
           <div class="cl-label">Phone</div>
           +91 8485022484
         </div>
       </a>
       <a href="https://www.linkedin.com/in/adil-mahagami-80aa58293?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="contact-link">
-        <span class="cl-icon">💼</span>
+        <span class="cl-icon">
+          <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+        </span>
         <div>
           <div class="cl-label">LinkedIn</div>
           adil-mahagami-80aa58293
@@ -1114,10 +1154,11 @@
       </a>
     </div>
 
-    <div class="contact-card full" style="background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(0, 255, 136, 0.03)); border-color: rgba(255,255,255,0.06);">
+    <div class="contact-card full" style="background: linear-gradient(135deg, rgba(14, 116, 144, 0.05), rgba(22, 163, 74, 0.03)); border-color: var(--border2);">
       <div style="text-align:center;">
-        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px;">
-          🛡 Securing digital assets & monitoring systems — <span style="color:var(--cyan)">Available for Hire</span>.
+        <div style="font-family:'Space Grotesk',sans-serif; font-size:16px; font-weight:700; margin-bottom:8px; display:flex; align-items:center; justify-content:center; gap:8px;">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="var(--cyan)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <span>Securing digital assets & monitoring systems — <span style="color:var(--cyan)">Available for Hire</span></span>
         </div>
         <div style="font-size:13px; color:var(--muted);">
           Based in Solapur, Maharashtra · Open to remote & on-site positions
